@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Royale Server</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="main-header">
+        <div class="main-container">
+            <div class="main-logo">
+                <img src="logo.png" alt="GOAT Logo">
+            </div>
+            <div class="main-player-count">
+                <span>👥 Jogadores: 969</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Ranking</a></li>
+                    <li><a href="#">Loja</a></li>
+                </ul>
+            </nav>
+            <div class="main-discord-button">
+                <a href="#" class="main-btn">Entrar com Discord</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main-hero">
+            <div class="main-hero-content">
+                <h1>O Seu Servidor Competitivo de Battle Royale!</h1>
+                <p>Alcance o auge da competição e enfrente os melhores jogadores no mais épico Battle Royale de todos os tempos!</p>
+                <a href="#" class="main-btn-primary">Jogue Agora</a>
+            </div>
+            <div class="main-hero-image">
+                <img src="{{ url_for('static', filename='images/yasuo.png') }}" alt="Personagem">
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

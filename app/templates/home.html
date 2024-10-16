@@ -9,17 +9,17 @@
     <link rel="icon" href="{{ url_for('static', filename='images/riot-icon.png') }}" type="image/png">
 </head>
 <body>
-    <div class="background"></div>
-    <div class="content">
-        <!-- Botão com ícone de seta para cima -->
-        <button id="upButton"><i class="fas fa-arrow-up"></i></button>
-        <!-- Texto de descrição que aparece depois -->
-        <p id="description">
-            Este projeto foi desenvolvido com o objetivo de testar e integrar dados da API da Riot Games, focando em informações sobre jogadores e partidas. A plataforma visa explorar a comunicação eficiente entre serviços e APIs, proporcionando insights para aprimorar habilidades em análise de dados e desenvolvimento do cenário competitivo.
-        </p>
-        <!-- Botão Iniciar logo abaixo da descrição -->
-        <button id="startButton">Iniciar</button>
-    </div>
+    <div class="background">
+        <div class="content">
+            <!-- Botão com ícone de seta para cima -->
+            <button id="upButton"><i class="fas fa-arrow-up"></i></button>
+            <!-- Texto de descrição que aparece depois -->
+            <p id="description">
+                Este projeto foi desenvolvido com o objetivo de testar e integrar dados da API da Riot Games, focando em informações sobre jogadores e partidas. A plataforma visa explorar a comunicação eficiente entre serviços e APIs, proporcionando insights para aprimorar habilidades em análise de dados e desenvolvimento do cenário competitivo.
+            </p>
+            <!-- Botão Iniciar logo abaixo da descrição -->
+            <button id="startButton">Iniciar</button>
+        </div>
 
 
 <footer class="social-footer">
@@ -33,5 +33,6 @@
 
     <!-- JavaScript para animação -->
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </div>
 </body>
 </html>

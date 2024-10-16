@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Stats | Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='images/riot-icon.png') }}" type="image/png">
+</head>
+<body>
+    <div class="background">
+        <div class="login-container">
+            <h2>NOVO INVOCADOR</h2>
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <input type="text" name="user" placeholder="User" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Senha para acessar a League Stats" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="summoner" placeholder="Seu Riot # ID" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="favorite_champion" placeholder="Morgana, Yasuo, Ekko..." required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="favorite_team" placeholder="G2, T1, Team Liquid..." required>
+                </div>
+                <button id="registerButton" type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="social-footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/dierlen-alexandre-bandeira/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/DierlenBandeira/Leagueofstats" target="_blank" class="github"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/riotgamesdevrel" target="_blank" class="discord"><i class="fab fa-discord"></i></a>
+        </div>
+    </footer>
+
+    <!-- Script para animação de loading -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Animação para o botão de registro
+            var registerButton = document.getElementById("registerButton");
+            if (registerButton) {
+                registerButton.addEventListener("click", function (event) {
+                    event.preventDefault(); // Impede o envio do formulário imediatamente
+                    var button = this;
+                    button.classList.add("loading");
+
+                    // Simula um tempo de carregamento antes de continuar
+                    setTimeout(function () {
+                        button.form.submit(); // Submete o formulário após o "loading"
+                    }, 0);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

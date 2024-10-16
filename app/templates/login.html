@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Stats | Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='images/riot-icon.png') }}" type="image/png">
+</head>
+<body>
+    <div class="background">
+        <div class="login-container">
+            <h2>LOGIN</h2>
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <input type="text" name="user" placeholder="User" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Senha" required>
+                </div>
+                <div class="form-group">
+                    <button id="loginButton" type="submit">Entrar</button>
+                </div>
+            </form>
+            {% if request.args.get('error') %}
+                <p class="error-message">Não encontramos seu registro, tente novamente.</p>
+            {% endif %}
+            <p class="register-link">
+                Novo invocador? <a href="/register">Registre-se</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="social-footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/dierlen-alexandre-bandeira/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/DierlenBandeira/Leagueofstats" target="_blank" class="github"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/riotgamesdevrel" target="_blank" class="discord"><i class="fab fa-discord"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript diretamente no HTML -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var button = document.getElementById("loginButton");
+            if (button) {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault(); // Impede o envio do formulário imediatamente
+                    button.classList.add("loading");
+
+                    // Simula um tempo de carregamento antes de continuar
+                    setTimeout(function () {
+                        button.form.submit(); // Submete o formulário após o "loading"
+                    }, 0);
+                });
+            } else {
+                console.log("Botão loginButton não encontrado.");
+            }
+        });
+    </script>
+
+    <script>
+        window.addEventListener("pageshow", function(event) {
+            if (event.persisted) {
+                // Se a página for carregada do cache, recarregar completamente
+                window.location.reload();
+            }
+        });
+    </script>
+
+</body>
+</html>
